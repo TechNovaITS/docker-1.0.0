@@ -1,0 +1,48 @@
+datadir="/var/lib/proxysql"
+
+admin_variables=
+{
+  admin_credentials="admin:admin_change_me"
+  mysql_ifaces="0.0.0.0:6032"
+}
+
+mysql_variables=
+{
+  threads=4
+  max_connections=2048
+  default_query_delay=0
+  default_query_timeout=36000000
+  have_compress=true
+  poll_timeout=2000
+  interfaces="0.0.0.0:6033"
+  monitor_username="proxysql_monitor"
+  monitor_password="monitor_change_me"
+  monitor_connect_interval=2000
+  monitor_ping_interval=2000
+  monitor_read_only_interval=1500
+  monitor_read_only_timeout=500
+  monitor_replication_lag_interval=4294967295
+}
+
+mysql_servers =
+(
+  { address="mysql-primary", port=3306, hostgroup=10, max_connections=200, comment="primary" },
+  { address="mysql-replica", port=3306, hostgroup=20, max_connections=200, comment="replica" }
+)
+
+mysql_replication_hostgroups =
+(
+  { writer_hostgroup=10, reader_hostgroup=20, check_type="read_only", writer_is_also_reader=1, comment="mysql primary/replica" }
+)
+
+mysql_users =
+(
+  { username="app", password="app_change_me", default_hostgroup=10, transaction_persistent=true, active=true },
+  { username="grafana", password="grafana_change_me", default_hostgroup=20, active=true }
+)
+
+mysql_query_rules =
+(
+  { rule_id=1, active=1, match_digest="^SELECT.*", destination_hostgroup=20, apply=1 },
+  { rule_id=2, active=1, match_digest="^(INSERT|UPDATE|DELETE|REPLACE|CREATE|ALTER|DROP|TRUNCATE).*", destination_hostgroup=10, apply=1 }
+)

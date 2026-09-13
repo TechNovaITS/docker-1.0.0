@@ -1,0 +1,62 @@
+mysql-primary no responde; promoviendo mysql-replica
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql-failover activo; vigilando mysql-primary
+mysql-primary no responde; promoviendo mysql-replica
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql-failover activo; vigilando mysql-primary
+mysql-primary no responde; promoviendo mysql-replica
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql-failover activo; vigilando mysql-primary
+mysql-primary no responde; promoviendo mysql-replica
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql-failover activo; vigilando mysql-primary
+mysql-primary no responde; promoviendo mysql-replica
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql-failover activo; vigilando mysql-primary
+mysql-primary no responde; promoviendo mysql-replica
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql-failover activo; vigilando mysql-primary
+mysql-primary no responde; promoviendo mysql-replica
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql-failover activo; vigilando mysql-primary
+mysql-primary no responde; promoviendo mysql-replica
+mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 2005 (HY000): Unknown MySQL server host 'mysql-replica' (-2)
+ERROR 2005 (HY000): Unknown MySQL server host 'mysql-replica' (-2)
+mysql-failover activo; vigilando mysql-primary
+mysql-primary no responde; promoviendo mysql-replica
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql-failover activo; vigilando mysql-primary
+mysql-primary no responde; promoviendo mysql-replica
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql-failover activo; vigilando mysql-primary
+mysql-primary no responde; promoviendo mysql-replica
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql-failover activo; vigilando mysql-primary
+mysql-primary no responde; promoviendo mysql-replica
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql-failover activo; vigilando mysql-primary
+mysql-primary no responde; promoviendo mysql-replica
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql-failover activo; vigilando mysql-primary
+mysql-primary no responde; promoviendo mysql-replica
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql: [Warning] Using a password on the command line interface can be insecure.
+mysql-failover activo; vigilando mysql-primary
+mysql-primary no responde; promoviendo mysql-replica
+mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 2003 (HY000): Can't connect to MySQL server on 'mysql-replica:3306' (111)
+ERROR 2003 (HY000): Can't connect to MySQL server on 'mysql-replica:3306' (111)
+mysql-failover activo; vigilando mysql-primary

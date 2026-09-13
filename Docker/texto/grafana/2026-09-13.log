@@ -1,0 +1,2 @@
+logger=cleanup t=2026-09-13T20:28:56.314249058Z level=info msg="Completed cleanup jobs" duration=59.577297ms
+logger=plugins.update.checker t=2026-09-13T20:28:56.849490855Z level=info msg="Update check succeeded" duration=276.727572ms

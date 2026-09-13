@@ -1,0 +1,77 @@
+level=info ts=2026-09-13T20:22:21.688936963Z caller=promtail.go:133 msg="Reloading configuration file" md5sum=2151384f1d76317cd223378153c07738
+level=info ts=2026-09-13T20:22:21.690345973Z caller=server.go:351 msg="server listening on addresses" http=[::]:9080 grpc=[::]:32769
+level=info ts=2026-09-13T20:22:21.69047544Z caller=main.go:173 msg="Starting Promtail" version="(version=release-3.3.x-23b5fc2, branch=release-3.3.x, revision=23b5fc2c)"
+level=warn ts=2026-09-13T20:22:21.690500534Z caller=promtail.go:263 msg="enable watchConfig"
+level=info ts=2026-09-13T20:22:26.69084953Z caller=target_group.go:130 msg="added Docker target" containerID=eb99cb4703995f7e3e2eafddda7b866c267c7637a8b543657667d5e99f945a27
+level=info ts=2026-09-13T20:22:26.690915804Z caller=target_group.go:130 msg="added Docker target" containerID=6d25465450f052a6144e74a74803ec75c2f25d61df04dd5857112f4cd521ff68
+level=info ts=2026-09-13T20:22:26.69094405Z caller=target_group.go:130 msg="added Docker target" containerID=786a3e4e2a1e28af8be6d5b98d431f07ded0a860d4aaddd60309b9c4597d5d29
+level=info ts=2026-09-13T20:22:26.691024668Z caller=target_group.go:130 msg="added Docker target" containerID=1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5
+level=info ts=2026-09-13T20:22:26.69105162Z caller=target_group.go:130 msg="added Docker target" containerID=a23e4bc574979aa7d7593d02df17154bec323191f9e0e19fc5c20e2738960296
+level=info ts=2026-09-13T20:22:26.69106891Z caller=target_group.go:130 msg="added Docker target" containerID=36380623ebe8079cbab9c16179a6f22e65daf23f0cb7e8fda399f60b226304e7
+level=info ts=2026-09-13T20:22:26.691101011Z caller=target_group.go:130 msg="added Docker target" containerID=a08a63403f5918f674b5117a61c6e74477bbe9cfe234b390536fa3c4ce35cb40
+level=info ts=2026-09-13T20:22:26.691161976Z caller=target_group.go:130 msg="added Docker target" containerID=b94238798eb490182dac8fc1d8dec40fa3b0a007eb9c5f27c3264440f8956fdb
+level=info ts=2026-09-13T20:22:26.691190867Z caller=target_group.go:130 msg="added Docker target" containerID=9830fe3c2372f124b5a112a00eb664ea388199cc86daea63b04f708a8315679c
+level=info ts=2026-09-13T20:24:57.110621638Z caller=target.go:133 target=docker/1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5 msg="finished transferring logs" written=274 container=1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5
+level=info ts=2026-09-13T20:25:01.694226941Z caller=target.go:133 target=docker/1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5 msg="finished transferring logs" written=1566 container=1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5
+level=info ts=2026-09-13T20:25:06.09467435Z caller=target.go:133 target=docker/9830fe3c2372f124b5a112a00eb664ea388199cc86daea63b04f708a8315679c msg="finished transferring logs" written=1292 container=9830fe3c2372f124b5a112a00eb664ea388199cc86daea63b04f708a8315679c
+level=error ts=2026-09-13T20:25:06.691831684Z caller=target.go:101 target=docker/9830fe3c2372f124b5a112a00eb664ea388199cc86daea63b04f708a8315679c msg="could not inspect container info" container=9830fe3c2372f124b5a112a00eb664ea388199cc86daea63b04f708a8315679c err="Error response from daemon: No such container: 9830fe3c2372f124b5a112a00eb664ea388199cc86daea63b04f708a8315679c"
+level=info ts=2026-09-13T20:25:06.693341078Z caller=target.go:133 target=docker/1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5 msg="finished transferring logs" written=548 container=1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5
+level=info ts=2026-09-13T20:25:10.11834067Z caller=target.go:133 target=docker/b94238798eb490182dac8fc1d8dec40fa3b0a007eb9c5f27c3264440f8956fdb msg="finished transferring logs" written=2934 container=b94238798eb490182dac8fc1d8dec40fa3b0a007eb9c5f27c3264440f8956fdb
+level=error ts=2026-09-13T20:25:11.691478657Z caller=target.go:101 target=docker/b94238798eb490182dac8fc1d8dec40fa3b0a007eb9c5f27c3264440f8956fdb msg="could not inspect container info" container=b94238798eb490182dac8fc1d8dec40fa3b0a007eb9c5f27c3264440f8956fdb err="Error response from daemon: No such container: b94238798eb490182dac8fc1d8dec40fa3b0a007eb9c5f27c3264440f8956fdb"
+level=info ts=2026-09-13T20:25:11.97627234Z caller=target.go:133 target=docker/1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5 msg="finished transferring logs" written=646 container=1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5
+level=info ts=2026-09-13T20:25:11.97627234Z caller=target.go:133 target=docker/1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5 msg="finished transferring logs" written=646 container=1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5
+level=info ts=2026-09-13T20:25:17.540571855Z caller=promtail.go:133 msg="Reloading configuration file" md5sum=49a9db7b45c8bc1dcf66240ff0626df1
+level=info ts=2026-09-13T20:25:17.542133408Z caller=server.go:351 msg="server listening on addresses" http=[::]:9080 grpc=[::]:43033
+level=info ts=2026-09-13T20:25:17.542246794Z caller=main.go:173 msg="Starting Promtail" version="(version=release-3.3.x-23b5fc2, branch=release-3.3.x, revision=23b5fc2c)"
+level=warn ts=2026-09-13T20:25:17.542269008Z caller=promtail.go:263 msg="enable watchConfig"
+level=info ts=2026-09-13T20:25:22.541817915Z caller=filetargetmanager.go:372 msg="Adding target" key="/var/log/mysql/mysql-principal/consultas.log:{job=\"mysql-consultas\", servicio=\"mysql-principal\"}"
+level=info ts=2026-09-13T20:25:22.541868007Z caller=filetargetmanager.go:372 msg="Adding target" key="/var/log/mysql/mysql-replica/consultas.log:{job=\"mysql-consultas\", servicio=\"mysql-replica\"}"
+level=info ts=2026-09-13T20:25:22.541829982Z caller=target_group.go:130 msg="added Docker target" containerID=3f042f0fa6602c805a472c468b33e912082c653fbe6811d18182e9dbcb0b79e3
+level=info ts=2026-09-13T20:25:22.541909781Z caller=filetarget.go:343 msg="watching new directory" directory=/var/log/mysql/mysql-replica
+level=info ts=2026-09-13T20:25:22.541910406Z caller=target_group.go:130 msg="added Docker target" containerID=f09909fab834851023c3c211c46d6b2d3660f34eae8387157b625ebb7da6d709
+level=info ts=2026-09-13T20:25:22.541957718Z caller=target_group.go:130 msg="added Docker target" containerID=cdcf63ca2e2bca75851af7431ffed1c321585ebaf9ef28a5a635e1969beef9a7
+level=info ts=2026-09-13T20:25:22.541947381Z caller=filetarget.go:343 msg="watching new directory" directory=/var/log/mysql/mysql-principal
+ts=2026-09-13T20:25:22.542041873Z caller=log.go:168 level=info msg="Seeked /var/log/mysql/mysql-replica/consultas.log - &{Offset:0 Whence:0}"
+level=info ts=2026-09-13T20:25:22.542052862Z caller=target_group.go:130 msg="added Docker target" containerID=6d25465450f052a6144e74a74803ec75c2f25d61df04dd5857112f4cd521ff68
+level=info ts=2026-09-13T20:25:22.542077843Z caller=tailer.go:147 component=tailer msg="tail routine: started" path=/var/log/mysql/mysql-replica/consultas.log
+level=info ts=2026-09-13T20:25:22.54210857Z caller=tailer.go:147 component=tailer msg="tail routine: started" path=/var/log/mysql/mysql-principal/consultas.log
+level=info ts=2026-09-13T20:25:22.54213211Z caller=target_group.go:130 msg="added Docker target" containerID=786a3e4e2a1e28af8be6d5b98d431f07ded0a860d4aaddd60309b9c4597d5d29
+level=info ts=2026-09-13T20:25:22.542212047Z caller=target_group.go:130 msg="added Docker target" containerID=1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5
+level=info ts=2026-09-13T20:25:22.542261737Z caller=target_group.go:130 msg="added Docker target" containerID=a23e4bc574979aa7d7593d02df17154bec323191f9e0e19fc5c20e2738960296
+level=info ts=2026-09-13T20:25:22.542316423Z caller=target_group.go:130 msg="added Docker target" containerID=36380623ebe8079cbab9c16179a6f22e65daf23f0cb7e8fda399f60b226304e7
+level=info ts=2026-09-13T20:25:22.542372728Z caller=target_group.go:130 msg="added Docker target" containerID=a08a63403f5918f674b5117a61c6e74477bbe9cfe234b390536fa3c4ce35cb40
+ts=2026-09-13T20:25:22.54244932Z caller=log.go:168 level=info msg="Seeked /var/log/mysql/mysql-principal/consultas.log - &{Offset:0 Whence:0}"
+level=info ts=2026-09-13T20:25:22.54586604Z caller=target.go:133 target=docker/1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5 msg="finished transferring logs" written=372 container=1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5
+level=info ts=2026-09-13T20:28:41.3008961Z caller=target.go:133 target=docker/1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5 msg="finished transferring logs" written=646 container=1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5
+level=info ts=2026-09-13T20:28:42.719626597Z caller=target.go:133 target=docker/1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5 msg="finished transferring logs" written=1018 container=1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5
+level=info ts=2026-09-13T20:28:46.813721978Z caller=target.go:133 target=docker/cdcf63ca2e2bca75851af7431ffed1c321585ebaf9ef28a5a635e1969beef9a7 msg="finished transferring logs" written=2670 container=cdcf63ca2e2bca75851af7431ffed1c321585ebaf9ef28a5a635e1969beef9a7
+level=error ts=2026-09-13T20:28:47.542961724Z caller=target.go:101 target=docker/cdcf63ca2e2bca75851af7431ffed1c321585ebaf9ef28a5a635e1969beef9a7 msg="could not inspect container info" container=cdcf63ca2e2bca75851af7431ffed1c321585ebaf9ef28a5a635e1969beef9a7 err="Error response from daemon: No such container: cdcf63ca2e2bca75851af7431ffed1c321585ebaf9ef28a5a635e1969beef9a7"
+level=info ts=2026-09-13T20:28:47.544850293Z caller=target.go:133 target=docker/1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5 msg="finished transferring logs" written=1096 container=1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5
+level=info ts=2026-09-13T20:28:50.766843814Z caller=target.go:133 target=docker/f09909fab834851023c3c211c46d6b2d3660f34eae8387157b625ebb7da6d709 msg="finished transferring logs" written=3410 container=f09909fab834851023c3c211c46d6b2d3660f34eae8387157b625ebb7da6d709
+level=info ts=2026-09-13T20:28:52.315300816Z caller=filetargetmanager.go:192 msg="received file watcher event" name=/var/log/mysql/mysql-principal/consultas-lentas.log op=CREATE
+level=error ts=2026-09-13T20:28:52.543315829Z caller=target.go:101 target=docker/f09909fab834851023c3c211c46d6b2d3660f34eae8387157b625ebb7da6d709 msg="could not inspect container info" container=f09909fab834851023c3c211c46d6b2d3660f34eae8387157b625ebb7da6d709 err="Error response from daemon: No such container: f09909fab834851023c3c211c46d6b2d3660f34eae8387157b625ebb7da6d709"
+level=info ts=2026-09-13T20:28:52.545200542Z caller=target.go:133 target=docker/1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5 msg="finished transferring logs" written=659 container=1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5
+level=info ts=2026-09-13T20:28:52.545200542Z caller=target.go:133 target=docker/1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5 msg="finished transferring logs" written=659 container=1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5
+level=info ts=2026-09-13T20:28:58.242068873Z caller=promtail.go:133 msg="Reloading configuration file" md5sum=ea448f22b47666e82b9694661e82e4cf
+level=info ts=2026-09-13T20:28:58.243612024Z caller=server.go:351 msg="server listening on addresses" http=[::]:9080 grpc=[::]:38751
+level=info ts=2026-09-13T20:28:58.243732864Z caller=main.go:173 msg="Starting Promtail" version="(version=release-3.3.x-23b5fc2, branch=release-3.3.x, revision=23b5fc2c)"
+level=warn ts=2026-09-13T20:28:58.243783131Z caller=promtail.go:263 msg="enable watchConfig"
+level=info ts=2026-09-13T20:29:03.244007564Z caller=target_group.go:130 msg="added Docker target" containerID=e8b5aae93f1636a293168e60531f17c28d6b8429c3d6148ba1d260b7ba43789f
+level=info ts=2026-09-13T20:29:03.244137181Z caller=target_group.go:130 msg="added Docker target" containerID=bcd7ca2f15d023994f5dbd13d30cf66cc1cc240092c9210483ca0e6997077386
+level=info ts=2026-09-13T20:29:03.244117415Z caller=filetargetmanager.go:372 msg="Adding target" key="/var/log/mysql/mysql-principal/consultas-lentas.log:{job=\"mysql-consultas-lentas\", servicio=\"mysql-principal\"}"
+level=info ts=2026-09-13T20:29:03.244186991Z caller=target_group.go:130 msg="added Docker target" containerID=2ab82cd4cd21cf6c6d19ac25ec960825e586592b02e17f0c327c17a41fdc55cf
+level=info ts=2026-09-13T20:29:03.244237377Z caller=target_group.go:130 msg="added Docker target" containerID=6d25465450f052a6144e74a74803ec75c2f25d61df04dd5857112f4cd521ff68
+level=info ts=2026-09-13T20:29:03.244245883Z caller=filetargetmanager.go:372 msg="Adding target" key="/var/log/mysql/mysql-replica/consultas-lentas.log:{job=\"mysql-consultas-lentas\", servicio=\"mysql-replica\"}"
+level=info ts=2026-09-13T20:29:03.244280455Z caller=target_group.go:130 msg="added Docker target" containerID=786a3e4e2a1e28af8be6d5b98d431f07ded0a860d4aaddd60309b9c4597d5d29
+level=info ts=2026-09-13T20:29:03.244321496Z caller=target_group.go:130 msg="added Docker target" containerID=1b2b7d6443800bb86606b97f12461fac31e0083927a7fe73fac172834e1b8de5
+level=info ts=2026-09-13T20:29:03.244337857Z caller=filetarget.go:343 msg="watching new directory" directory=/var/log/mysql/mysql-replica
+level=info ts=2026-09-13T20:29:03.244348Z caller=filetarget.go:343 msg="watching new directory" directory=/var/log/mysql/mysql-principal
+level=info ts=2026-09-13T20:29:03.244386685Z caller=target_group.go:130 msg="added Docker target" containerID=a23e4bc574979aa7d7593d02df17154bec323191f9e0e19fc5c20e2738960296
+level=info ts=2026-09-13T20:29:03.244416981Z caller=target_group.go:130 msg="added Docker target" containerID=36380623ebe8079cbab9c16179a6f22e65daf23f0cb7e8fda399f60b226304e7
+level=info ts=2026-09-13T20:29:03.244450812Z caller=target_group.go:130 msg="added Docker target" containerID=a08a63403f5918f674b5117a61c6e74477bbe9cfe234b390536fa3c4ce35cb40
+level=info ts=2026-09-13T20:29:03.244590495Z caller=tailer.go:147 component=tailer msg="tail routine: started" path=/var/log/mysql/mysql-principal/consultas-lentas.log
+ts=2026-09-13T20:29:03.24468286Z caller=log.go:168 level=info msg="Seeked /var/log/mysql/mysql-principal/consultas-lentas.log - &{Offset:0 Whence:0}"
+level=info ts=2026-09-13T20:29:03.24499121Z caller=tailer.go:147 component=tailer msg="tail routine: started" path=/var/log/mysql/mysql-replica/consultas-lentas.log
+ts=2026-09-13T20:29:03.245022371Z caller=log.go:168 level=info msg="Seeked /var/log/mysql/mysql-replica/consultas-lentas.log - &{Offset:0 Whence:0}"
+level=error ts=2026-09-13T20:30:38.244826641Z caller=target.go:101 target=docker/36380623ebe8079cbab9c16179a6f22e65daf23f0cb7e8fda399f60b226304e7 msg="could not inspect container info" container=36380623ebe8079cbab9c16179a6f22e65daf23f0cb7e8fda399f60b226304e7 err="Error response from daemon: No such container: 36380623ebe8079cbab9c16179a6f22e65daf23f0cb7e8fda399f60b226304e7"
+level=info ts=2026-09-13T20:30:43.243851394Z caller=target_group.go:130 msg="added Docker target" containerID=b9b923361a876a098f2ea679a690de08f8a49f942df447a3fc6cd3fc764d9578

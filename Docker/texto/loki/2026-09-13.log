@@ -1,0 +1,199 @@
+level=info ts=2026-09-13T20:21:51.002268324Z caller=main.go:126 msg="Starting Loki" version="(version=release-3.3.x-23b5fc2, branch=release-3.3.x, revision=23b5fc2c)"
+level=info ts=2026-09-13T20:21:51.002299342Z caller=main.go:127 msg="Loading configuration file" filename=/etc/loki/config.yml
+level=info ts=2026-09-13T20:21:51.004997452Z caller=server.go:351 msg="server listening on addresses" http=[::]:3100 grpc=[::]:9096
+level=info ts=2026-09-13T20:21:51.007681403Z caller=table_manager.go:299 index-store=tsdb-2024-01-01 msg="query readiness setup completed" duration=1.878µs distinct_users_len=0 distinct_users=
+level=info ts=2026-09-13T20:21:51.007673406Z caller=table_manager.go:136 index-store=tsdb-2024-01-01 msg="uploading tables"
+level=info ts=2026-09-13T20:21:51.007724193Z caller=shipper.go:160 index-store=tsdb-2024-01-01 msg="starting index shipper in RW mode"
+level=info ts=2026-09-13T20:21:51.008089132Z caller=head_manager.go:308 index-store=tsdb-2024-01-01 component=tsdb-head-manager msg="loaded wals by period" groups=0
+level=info ts=2026-09-13T20:21:51.008132125Z caller=manager.go:86 index-store=tsdb-2024-01-01 component=tsdb-manager msg="loaded leftover local indices" err=null successful=true buckets=0 indices=0 failures=0
+level=info ts=2026-09-13T20:21:51.008158907Z caller=head_manager.go:308 index-store=tsdb-2024-01-01 component=tsdb-head-manager msg="loaded wals by period" groups=0
+level=info ts=2026-09-13T20:21:51.010583361Z caller=mapper.go:47 msg="cleaning up mapped rules directory" path=/loki/rules-temp
+level=info ts=2026-09-13T20:21:51.016515962Z caller=worker.go:130 component=querier msg="Starting querier worker using query-scheduler and scheduler ring for addresses"
+level=info ts=2026-09-13T20:21:51.019969803Z caller=module_service.go:82 msg=starting module=server
+level=info ts=2026-09-13T20:21:51.020024888Z caller=module_service.go:82 msg=starting module=memberlist-kv
+level=info ts=2026-09-13T20:21:51.020042214Z caller=module_service.go:82 msg=starting module=query-scheduler-ring
+level=info ts=2026-09-13T20:21:51.020028512Z caller=module_service.go:82 msg=starting module=query-frontend-tripperware
+level=info ts=2026-09-13T20:21:51.020032488Z caller=module_service.go:82 msg=starting module=cache-generation-loader
+level=info ts=2026-09-13T20:21:51.020072757Z caller=module_service.go:82 msg=starting module=store
+level=info ts=2026-09-13T20:21:51.020103102Z caller=module_service.go:82 msg=starting module=ring
+level=info ts=2026-09-13T20:21:51.020129584Z caller=ring.go:316 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-09-13T20:21:51.020160587Z caller=ring.go:316 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-09-13T20:21:51.020207783Z caller=module_service.go:82 msg=starting module=ingester
+level=info ts=2026-09-13T20:21:51.020262927Z caller=module_service.go:82 msg=starting module=compactor
+level=info ts=2026-09-13T20:21:51.020320214Z caller=ring.go:316 msg="ring doesn't exist in KV store yet"
+level=info ts=2026-09-13T20:21:51.020360186Z caller=basic_lifecycler.go:299 msg="instance not found in the ring" instance=a23e4bc57497 ring=compactor
+level=info ts=2026-09-13T20:21:51.020369331Z caller=basic_lifecycler_delegates.go:63 msg="not loading tokens from file, tokens file path is empty"
+level=info ts=2026-09-13T20:21:51.02036707Z caller=module_service.go:82 msg=starting module=ingester-querier
+level=info ts=2026-09-13T20:21:51.020383686Z caller=ingester.go:552 component=ingester msg="recovering from checkpoint"
+level=info ts=2026-09-13T20:21:51.020419857Z caller=module_service.go:82 msg=starting module=ruler
+level=info ts=2026-09-13T20:21:51.020436372Z caller=recovery.go:41 component=ingester msg="no checkpoint found, treating as no-op"
+level=info ts=2026-09-13T20:21:51.020428534Z caller=module_service.go:82 msg=starting module=distributor
+level=info ts=2026-09-13T20:21:51.020448491Z caller=ruler.go:533 msg="ruler up and running"
+level=info ts=2026-09-13T20:21:51.020558933Z caller=basic_lifecycler.go:299 component=distributor msg="instance not found in the ring" instance=a23e4bc57497 ring=distributor
+level=error ts=2026-09-13T20:21:51.020582553Z caller=ratestore.go:109 msg="error getting ingester clients" err="empty ring"
+level=info ts=2026-09-13T20:21:51.020596422Z caller=ingester.go:568 component=ingester msg="recovered WAL checkpoint recovery finished" elapsed=213.605µs errors=false
+level=info ts=2026-09-13T20:21:51.020619408Z caller=ingester.go:574 component=ingester msg="recovering from WAL"
+level=info ts=2026-09-13T20:21:51.020710752Z caller=compactor.go:414 msg="waiting until compactor is JOINING in the ring"
+level=info ts=2026-09-13T20:21:51.020792138Z caller=basic_lifecycler.go:299 msg="instance not found in the ring" instance=a23e4bc57497 ring=scheduler
+level=info ts=2026-09-13T20:21:51.020811753Z caller=basic_lifecycler_delegates.go:63 msg="not loading tokens from file, tokens file path is empty"
+level=info ts=2026-09-13T20:21:51.020905611Z caller=ingester.go:590 component=ingester msg="WAL segment recovery finished" elapsed=523.257µs errors=false
+level=info ts=2026-09-13T20:21:51.020933692Z caller=ingester.go:538 component=ingester msg="closing recoverer"
+level=info ts=2026-09-13T20:21:51.020940598Z caller=ingester.go:546 component=ingester msg="WAL recovery finished" time=559.084µs
+level=info ts=2026-09-13T20:21:51.02095898Z caller=ringmanager.go:186 msg="waiting until scheduler is JOINING in the ring"
+level=info ts=2026-09-13T20:21:51.020975525Z caller=ringmanager.go:190 msg="scheduler is JOINING in the ring"
+level=info ts=2026-09-13T20:21:51.0209901Z caller=lifecycler.go:675 component=ingester msg="not loading tokens from file, tokens file path is empty"
+level=info ts=2026-09-13T20:21:51.021040136Z caller=lifecycler.go:702 component=ingester msg="instance not found in ring, adding with no tokens" ring=ingester
+level=info ts=2026-09-13T20:21:51.02105637Z caller=ringmanager.go:199 msg="waiting until scheduler is ACTIVE in the ring"
+level=info ts=2026-09-13T20:21:51.021094381Z caller=lifecycler.go:544 component=ingester msg="auto-joining cluster after timeout" ring=ingester
+level=info ts=2026-09-13T20:21:51.021199298Z caller=ingester.go:759 component=ingester msg="sleeping for initial delay before starting periodic flushing" delay=18.169255073s
+level=info ts=2026-09-13T20:21:51.021288053Z caller=wal.go:156 msg=started component=wal
+level=info ts=2026-09-13T20:21:51.131241334Z caller=ringmanager.go:203 msg="scheduler is ACTIVE in the ring"
+level=info ts=2026-09-13T20:21:51.131333646Z caller=module_service.go:82 msg=starting module=query-scheduler
+level=info ts=2026-09-13T20:21:51.131452903Z caller=module_service.go:82 msg=starting module=querier
+level=info ts=2026-09-13T20:21:51.131500591Z caller=module_service.go:82 msg=starting module=query-frontend
+level=info ts=2026-09-13T20:21:51.203823417Z caller=compactor.go:418 msg="compactor is JOINING in the ring"
+level=info ts=2026-09-13T20:21:51.20403557Z caller=compactor.go:428 msg="waiting until compactor is ACTIVE in the ring"
+level=info ts=2026-09-13T20:21:51.330476846Z caller=compactor.go:432 msg="compactor is ACTIVE in the ring"
+level=info ts=2026-09-13T20:21:51.330549976Z caller=loki.go:542 msg="Loki started" startup_time=339.01575ms
+level=info ts=2026-09-13T20:21:54.132183951Z caller=worker.go:231 component=querier msg="adding connection" addr=127.0.0.1:9096
+level=info ts=2026-09-13T20:21:54.132211658Z caller=scheduler.go:653 msg="this scheduler is in the ReplicationSet, will now accept requests."
+level=info ts=2026-09-13T20:21:56.331195515Z caller=compactor.go:493 msg="this instance has been chosen to run the compactor, starting compactor"
+level=info ts=2026-09-13T20:21:56.331288006Z caller=compactor.go:522 msg="waiting 10m0s for ring to stay stable and previous compactions to finish before starting compactor"
+level=info ts=2026-09-13T20:22:01.132420555Z caller=frontend_scheduler_worker.go:106 msg="adding connection to scheduler" addr=127.0.0.1:9096
+level=info ts=2026-09-13T20:22:21.021319483Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:22:21.021368318Z caller=recalculate_owned_streams.go:63 msg="detected ring changes, re-evaluating streams ownership"
+level=info ts=2026-09-13T20:22:21.021382401Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:22:26.842078846Z caller=roundtrip.go:359 org_id=fake traceID=7cf0351264f7e939 msg="executing query" type=range query="{container=\"docker-apache-php-1\"}" start=2026-09-13T19:22:26.841847833Z end=2026-09-13T20:22:26.841847833Z start_delta=1h0m0.00022549s end_delta=226.145µs length=1h0m0s step=14000 query_hash=3581301085
+level=info ts=2026-09-13T20:22:26.844272751Z caller=table_manager.go:194 index-store=tsdb-2024-01-01 msg="get or create table" found=false table=index_20709 wait_for_lock=1.254µs
+level=info ts=2026-09-13T20:22:26.84430722Z caller=table_manager.go:204 index-store=tsdb-2024-01-01 msg="downloading all files for table" table=index_20709
+ts=2026-09-13T20:22:26.844575282Z caller=spanlogger.go:111 table-name=index_20709 user=fake caller=log.go:168 level=info msg="init index set" duration=137.478µs success=true
+ts=2026-09-13T20:22:26.844592875Z caller=spanlogger.go:111 table-name=index_20709 user=fake caller=log.go:168 level=info msg="downloaded index set at query time" duration=137.478µs
+ts=2026-09-13T20:22:26.84458764Z caller=spanlogger.go:111 table-name=index_20709 user-id=fake user=fake caller=log.go:168 level=info msg="init index set" duration=101.848µs success=true
+ts=2026-09-13T20:22:26.844602847Z caller=spanlogger.go:111 table-name=index_20709 user-id=fake user=fake caller=log.go:168 level=info msg="downloaded index set at query time" duration=101.848µs
+level=info ts=2026-09-13T20:22:26.844740014Z caller=metrics.go:409 org_id=fake traceID=7cf0351264f7e939 latency=fast query_type=stats start=2026-09-13T19:59:30Z end=2026-09-13T20:22:26Z start_delta=22m56.844736411s end_delta=844.736782ms length=22m56s duration=843.028µs status=200 query="{container=\"docker-apache-php-1\"}" query_hash=3581301085 total_entries=1
+level=info ts=2026-09-13T20:22:26.846540886Z caller=engine.go:263 component=querier org_id=fake traceID=7cf0351264f7e939 msg="executing query" query="{container=\"docker-apache-php-1\"}" query_hash=3581301085 type=range length=22m26.841847833s step=14s
+level=info ts=2026-09-13T20:22:26.848033234Z caller=table_manager.go:194 index-store=tsdb-2024-01-01 msg="get or create table" found=true table=index_20709 wait_for_lock=1.99µs
+level=info ts=2026-09-13T20:22:26.848429496Z caller=metrics.go:237 component=querier org_id=fake traceID=7cf0351264f7e939 latency=fast query="{container=\"docker-apache-php-1\"}" query_hash=3581301085 query_type=limited range_type=range length=22m26.841847833s start_delta=22m26.848418296s end_delta=6.570652ms step=14s duration=1.837157ms status=200 limit=3 returned_lines=0 throughput=0B total_bytes=0B total_bytes_structured_metadata=0B lines_per_second=0 total_lines=0 post_filter_lines=0 total_entries=0 store_chunks_download_time=0s queue_time=106.062µs splits=0 shards=0 query_referenced_structured_metadata=false pipeline_wrapper_filtered_lines=0 chunk_refs_fetch_time=163.899µs cache_chunk_req=0 cache_chunk_hit=0 cache_chunk_bytes_stored=0 cache_chunk_bytes_fetched=0 cache_chunk_download_time=0s cache_index_req=0 cache_index_hit=0 cache_index_download_time=0s cache_stats_results_req=0 cache_stats_results_hit=0 cache_stats_results_download_time=0s cache_volume_results_req=0 cache_volume_results_hit=0 cache_volume_results_download_time=0s cache_result_req=0 cache_result_hit=0 cache_result_download_time=0s cache_result_query_length_served=0s cardinality_estimate=0 ingester_chunk_refs=0 ingester_chunk_downloaded=0 ingester_chunk_matches=0 ingester_requests=1 ingester_chunk_head_bytes=0B ingester_chunk_compressed_bytes=0B ingester_chunk_decompressed_bytes=0B ingester_post_filter_lines=0 congestion_control_latency=0s index_total_chunks=0 index_post_bloom_filter_chunks=0 index_bloom_filter_ratio=0.00 index_used_bloom_filters=false index_shard_resolver_duration=0s disable_pipeline_wrappers=false has_labelfilter_before_parser=false
+level=info ts=2026-09-13T20:22:26.851215392Z caller=table_manager.go:194 index-store=tsdb-2024-01-01 msg="get or create table" found=true table=index_20709 wait_for_lock=1.232µs
+level=info ts=2026-09-13T20:22:26.851406416Z caller=metrics.go:409 org_id=fake traceID=7cf0351264f7e939 latency=fast query_type=stats start=2026-09-13T19:21:56Z end=2026-09-13T20:00:00Z start_delta=1h0m30.851403934s end_delta=22m26.851404214s length=38m4s duration=227.555µs status=200 query="{container=\"docker-apache-php-1\"}" query_hash=3581301085 total_entries=1
+level=info ts=2026-09-13T20:22:26.852571913Z caller=engine.go:263 component=querier org_id=fake traceID=7cf0351264f7e939 msg="executing query" query="{container=\"docker-apache-php-1\"}" query_hash=3581301085 type=range length=37m33.158152167s step=14s
+level=info ts=2026-09-13T20:22:26.852919363Z caller=table_manager.go:194 index-store=tsdb-2024-01-01 msg="get or create table" found=true table=index_20709 wait_for_lock=833ns
+level=info ts=2026-09-13T20:22:26.853111395Z caller=metrics.go:237 component=querier org_id=fake traceID=7cf0351264f7e939 latency=fast query="{container=\"docker-apache-php-1\"}" query_hash=3581301085 query_type=limited range_type=range length=37m33.158152167s start_delta=1h0m0.011253831s end_delta=22m26.853101845s step=14s duration=495.373µs status=200 limit=3 returned_lines=0 throughput=0B total_bytes=0B total_bytes_structured_metadata=0B lines_per_second=0 total_lines=0 post_filter_lines=0 total_entries=0 store_chunks_download_time=0s queue_time=114.708µs splits=0 shards=0 query_referenced_structured_metadata=false pipeline_wrapper_filtered_lines=0 chunk_refs_fetch_time=91.691µs cache_chunk_req=0 cache_chunk_hit=0 cache_chunk_bytes_stored=0 cache_chunk_bytes_fetched=0 cache_chunk_download_time=0s cache_index_req=0 cache_index_hit=0 cache_index_download_time=0s cache_stats_results_req=0 cache_stats_results_hit=0 cache_stats_results_download_time=0s cache_volume_results_req=0 cache_volume_results_hit=0 cache_volume_results_download_time=0s cache_result_req=0 cache_result_hit=0 cache_result_download_time=0s cache_result_query_length_served=0s cardinality_estimate=0 ingester_chunk_refs=0 ingester_chunk_downloaded=0 ingester_chunk_matches=0 ingester_requests=1 ingester_chunk_head_bytes=0B ingester_chunk_compressed_bytes=0B ingester_chunk_decompressed_bytes=0B ingester_post_filter_lines=0 congestion_control_latency=0s index_total_chunks=0 index_post_bloom_filter_chunks=0 index_bloom_filter_ratio=0.00 index_used_bloom_filters=false index_shard_resolver_duration=0s disable_pipeline_wrappers=false has_labelfilter_before_parser=false
+level=info ts=2026-09-13T20:22:26.853523983Z caller=metrics.go:237 component=frontend org_id=fake traceID=7cf0351264f7e939 latency=fast query="{container=\"docker-apache-php-1\"}" query_hash=3581301085 query_type=limited range_type=range length=1h0m0s start_delta=1h0m0.011667866s end_delta=11.668044ms step=14s duration=11.253367ms status=200 limit=3 returned_lines=0 throughput=0B total_bytes=0B total_bytes_structured_metadata=0B lines_per_second=0 total_lines=0 post_filter_lines=0 total_entries=0 store_chunks_download_time=0s queue_time=221µs splits=2 shards=2 query_referenced_structured_metadata=false pipeline_wrapper_filtered_lines=0 chunk_refs_fetch_time=255.59µs cache_chunk_req=0 cache_chunk_hit=0 cache_chunk_bytes_stored=0 cache_chunk_bytes_fetched=0 cache_chunk_download_time=0s cache_index_req=0 cache_index_hit=0 cache_index_download_time=0s cache_stats_results_req=1 cache_stats_results_hit=0 cache_stats_results_download_time=24.538µs cache_volume_results_req=0 cache_volume_results_hit=0 cache_volume_results_download_time=0s cache_result_req=0 cache_result_hit=0 cache_result_download_time=0s cache_result_query_length_served=0s cardinality_estimate=0 ingester_chunk_refs=0 ingester_chunk_downloaded=0 ingester_chunk_matches=0 ingester_requests=2 ingester_chunk_head_bytes=0B ingester_chunk_compressed_bytes=0B ingester_chunk_decompressed_bytes=0B ingester_post_filter_lines=0 congestion_control_latency=0s index_total_chunks=0 index_post_bloom_filter_chunks=0 index_bloom_filter_ratio=0.00 index_used_bloom_filters=false index_shard_resolver_duration=0s disable_pipeline_wrappers=false has_labelfilter_before_parser=false
+level=info ts=2026-09-13T20:22:41.080916952Z caller=roundtrip.go:414 org_id=fake traceID=616fe330a86dd74f msg="executing query" type=labels label= length=1h0m0s query=
+level=info ts=2026-09-13T20:22:41.082379523Z caller=table_manager.go:194 index-store=tsdb-2024-01-01 msg="get or create table" found=true table=index_20709 wait_for_lock=1.689µs
+level=info ts=2026-09-13T20:22:41.08278421Z caller=metrics.go:292 org_id=fake traceID=616fe330a86dd74f latency=fast query_type=labels splits=0 start=2026-09-13T19:22:41.080854649Z end=2026-09-13T20:22:41.080854649Z start_delta=1h0m0.001924692s end_delta=1.925136ms length=1h0m0s duration=952.304µs status=200 label= query= query_hash=2166136261 total_entries=6 cache_label_results_req=0 cache_label_results_hit=0 cache_label_results_stored=0 cache_label_results_download_time=0s cache_label_results_query_length_served=0s
+level=info ts=2026-09-13T20:22:41.08326009Z caller=metrics.go:292 component=frontend org_id=fake traceID=616fe330a86dd74f latency=fast query_type=labels splits=0 start=2026-09-13T19:22:41.080854649Z end=2026-09-13T20:22:41.080854649Z start_delta=1h0m0.002402692s end_delta=2.402744ms length=1h0m0s duration=2.249509ms status=200 label= query= query_hash=2166136261 total_entries=6 cache_label_results_req=0 cache_label_results_hit=0 cache_label_results_stored=0 cache_label_results_download_time=0s cache_label_results_query_length_served=0s
+level=info ts=2026-09-13T20:22:51.008406793Z caller=table_manager.go:136 index-store=tsdb-2024-01-01 msg="uploading tables"
+level=info ts=2026-09-13T20:22:51.021313509Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:22:51.021357336Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:23:21.021402658Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:23:21.021467901Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:23:51.00813909Z caller=table_manager.go:136 index-store=tsdb-2024-01-01 msg="uploading tables"
+level=info ts=2026-09-13T20:23:51.021251146Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:23:51.021303055Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:24:21.021417079Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:24:21.021489692Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:24:51.008083357Z caller=table_manager.go:136 index-store=tsdb-2024-01-01 msg="uploading tables"
+level=info ts=2026-09-13T20:24:51.021342082Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:24:51.021400095Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:25:21.021782533Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:25:21.021850862Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:25:46.704407633Z caller=roundtrip.go:414 org_id=fake traceID=3971250ea6d9910c msg="executing query" type=labels label=job length=1h0m0s query=
+level=info ts=2026-09-13T20:25:46.705906199Z caller=table_manager.go:194 index-store=tsdb-2024-01-01 msg="get or create table" found=true table=index_20709 wait_for_lock=2.015µs
+level=info ts=2026-09-13T20:25:46.706287138Z caller=metrics.go:292 org_id=fake traceID=3971250ea6d9910c latency=fast query_type=labels splits=0 start=2026-09-13T19:25:46.704342791Z end=2026-09-13T20:25:46.704342791Z start_delta=1h0m0.001940177s end_delta=1.940809ms length=1h0m0s duration=885.084µs status=200 label=job query= query_hash=2166136261 total_entries=1 cache_label_results_req=0 cache_label_results_hit=0 cache_label_results_stored=0 cache_label_results_download_time=0s cache_label_results_query_length_served=0s
+level=info ts=2026-09-13T20:25:46.706728201Z caller=metrics.go:292 component=frontend org_id=fake traceID=3971250ea6d9910c latency=fast query_type=labels splits=0 start=2026-09-13T19:25:46.704342791Z end=2026-09-13T20:25:46.704342791Z start_delta=1h0m0.0023809s end_delta=2.380994ms length=1h0m0s duration=2.200794ms status=200 label=job query= query_hash=2166136261 total_entries=1 cache_label_results_req=0 cache_label_results_hit=0 cache_label_results_stored=0 cache_label_results_download_time=0s cache_label_results_query_length_served=0s
+level=info ts=2026-09-13T20:25:48.042036949Z caller=roundtrip.go:359 org_id=fake traceID=2ef69958fe30aba0 msg="executing query" type=range query="{job=\"mysql-consultas\"}" start=2026-09-13T19:25:48.041908376Z end=2026-09-13T20:25:48.041908376Z start_delta=1h0m0.000125536s end_delta=125.843µs length=1h0m0s step=14000 query_hash=1087627142
+level=info ts=2026-09-13T20:25:48.042943684Z caller=table_manager.go:194 index-store=tsdb-2024-01-01 msg="get or create table" found=true table=index_20709 wait_for_lock=2.736µs
+level=info ts=2026-09-13T20:25:48.043384285Z caller=metrics.go:409 org_id=fake traceID=2ef69958fe30aba0 latency=fast query_type=stats start=2026-09-13T19:59:30Z end=2026-09-13T20:25:48Z start_delta=26m18.043380959s end_delta=43.381367ms length=26m18s duration=567.83µs status=200 query="{job=\"mysql-consultas\"}" query_hash=1087627142 total_entries=1
+level=info ts=2026-09-13T20:25:48.044316606Z caller=engine.go:263 component=querier org_id=fake traceID=2ef69958fe30aba0 msg="executing query" query="{job=\"mysql-consultas\"}" query_hash=1087627142 type=range length=25m48.041908376s step=14s
+level=info ts=2026-09-13T20:25:48.044812046Z caller=table_manager.go:194 index-store=tsdb-2024-01-01 msg="get or create table" found=true table=index_20709 wait_for_lock=2.077µs
+level=info ts=2026-09-13T20:25:48.045136932Z caller=metrics.go:237 component=querier org_id=fake traceID=2ef69958fe30aba0 latency=fast query="{job=\"mysql-consultas\"}" query_hash=1087627142 query_type=limited range_type=range length=25m48.041908376s start_delta=25m48.045119362s end_delta=3.211237ms step=14s duration=741.917µs status=200 limit=3 returned_lines=3 throughput=19MB total_bytes=14kB total_bytes_structured_metadata=0B lines_per_second=281702 total_lines=209 post_filter_lines=209 total_entries=3 store_chunks_download_time=0s queue_time=69.034µs splits=0 shards=0 query_referenced_structured_metadata=false pipeline_wrapper_filtered_lines=0 chunk_refs_fetch_time=154.297µs cache_chunk_req=0 cache_chunk_hit=0 cache_chunk_bytes_stored=0 cache_chunk_bytes_fetched=0 cache_chunk_download_time=0s cache_index_req=0 cache_index_hit=0 cache_index_download_time=0s cache_stats_results_req=0 cache_stats_results_hit=0 cache_stats_results_download_time=0s cache_volume_results_req=0 cache_volume_results_hit=0 cache_volume_results_download_time=0s cache_result_req=0 cache_result_hit=0 cache_result_download_time=0s cache_result_query_length_served=0s cardinality_estimate=0 ingester_chunk_refs=0 ingester_chunk_downloaded=0 ingester_chunk_matches=2 ingester_requests=1 ingester_chunk_head_bytes=14kB ingester_chunk_compressed_bytes=0B ingester_chunk_decompressed_bytes=0B ingester_post_filter_lines=209 congestion_control_latency=0s index_total_chunks=0 index_post_bloom_filter_chunks=0 index_bloom_filter_ratio=0.00 index_used_bloom_filters=false index_shard_resolver_duration=0s disable_pipeline_wrappers=false has_labelfilter_before_parser=false
+ts=2026-09-13T20:25:48.045846073Z caller=spanlogger.go:111 middleware=QueryShard.astMapperware org_id=fake traceID=2ef69958fe30aba0 user=fake caller=log.go:168 level=warn msg="failed mapping AST" err="context canceled" query="{job=\"mysql-consultas\"}"
+level=info ts=2026-09-13T20:25:48.045873419Z caller=metrics.go:237 component=frontend org_id=fake traceID=2ef69958fe30aba0 latency=fast query="{job=\"mysql-consultas\"}" query_hash=1087627142 query_type=limited range_type=range length=1h0m0s start_delta=1h0m0.003954717s end_delta=3.954859ms step=14s duration=3.660997ms status=200 limit=3 returned_lines=0 throughput=3.8MB total_bytes=14kB total_bytes_structured_metadata=0B lines_per_second=57088 total_lines=209 post_filter_lines=209 total_entries=3 store_chunks_download_time=0s queue_time=69µs splits=1 shards=1 query_referenced_structured_metadata=false pipeline_wrapper_filtered_lines=0 chunk_refs_fetch_time=154.297µs cache_chunk_req=0 cache_chunk_hit=0 cache_chunk_bytes_stored=0 cache_chunk_bytes_fetched=0 cache_chunk_download_time=0s cache_index_req=0 cache_index_hit=0 cache_index_download_time=0s cache_stats_results_req=0 cache_stats_results_hit=0 cache_stats_results_download_time=0s cache_volume_results_req=0 cache_volume_results_hit=0 cache_volume_results_download_time=0s cache_result_req=0 cache_result_hit=0 cache_result_download_time=0s cache_result_query_length_served=0s cardinality_estimate=0 ingester_chunk_refs=0 ingester_chunk_downloaded=0 ingester_chunk_matches=2 ingester_requests=1 ingester_chunk_head_bytes=14kB ingester_chunk_compressed_bytes=0B ingester_chunk_decompressed_bytes=0B ingester_post_filter_lines=209 congestion_control_latency=0s index_total_chunks=0 index_post_bloom_filter_chunks=0 index_bloom_filter_ratio=0.00 index_used_bloom_filters=false index_shard_resolver_duration=0s disable_pipeline_wrappers=false has_labelfilter_before_parser=false
+level=info ts=2026-09-13T20:25:51.008277115Z caller=table_manager.go:136 index-store=tsdb-2024-01-01 msg="uploading tables"
+level=info ts=2026-09-13T20:25:51.02161534Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:25:51.021665277Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:26:21.021672492Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:26:21.02175599Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:26:51.008818251Z caller=table_manager.go:238 index-store=tsdb-2024-01-01 msg="syncing tables"
+level=info ts=2026-09-13T20:26:51.008862553Z caller=table_manager.go:136 index-store=tsdb-2024-01-01 msg="uploading tables"
+level=info ts=2026-09-13T20:26:51.009055064Z caller=table_manager.go:299 index-store=tsdb-2024-01-01 msg="query readiness setup completed" duration=2.646µs distinct_users_len=0 distinct_users=
+level=info ts=2026-09-13T20:26:51.021287077Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:26:51.02135254Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:26:51.021337068Z caller=checkpoint.go:611 msg="starting checkpoint"
+level=info ts=2026-09-13T20:26:51.021671911Z caller=checkpoint.go:336 msg="attempting checkpoint for" dir=/loki/wal/checkpoint.000000
+level=info ts=2026-09-13T20:27:21.02126885Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:27:21.021324567Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:27:51.008574158Z caller=table_manager.go:136 index-store=tsdb-2024-01-01 msg="uploading tables"
+level=info ts=2026-09-13T20:27:51.021349245Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:27:51.021388725Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:28:21.021274685Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:28:21.021347368Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:28:51.008770427Z caller=table_manager.go:136 index-store=tsdb-2024-01-01 msg="uploading tables"
+level=info ts=2026-09-13T20:28:51.022293045Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:28:51.022336166Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:29:21.021844147Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:29:21.021906877Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:29:51.008389293Z caller=table_manager.go:136 index-store=tsdb-2024-01-01 msg="uploading tables"
+level=info ts=2026-09-13T20:29:51.021243547Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:29:51.02129856Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:30:21.021400732Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:30:21.021470756Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:30:51.008039382Z caller=table_manager.go:136 index-store=tsdb-2024-01-01 msg="uploading tables"
+level=info ts=2026-09-13T20:30:51.02126688Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:30:51.021329434Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:31:21.021260557Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:31:21.021290184Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:31:21.036885737Z caller=checkpoint.go:498 msg="atomic checkpoint finished" old=/loki/wal/checkpoint.000000.tmp new=/loki/wal/checkpoint.000000
+level=info ts=2026-09-13T20:31:21.037258005Z caller=checkpoint.go:569 msg="checkpoint done" time=4m30.015239798s
+level=info ts=2026-09-13T20:31:51.008427247Z caller=table_manager.go:238 index-store=tsdb-2024-01-01 msg="syncing tables"
+level=info ts=2026-09-13T20:31:51.008480422Z caller=table_manager.go:136 index-store=tsdb-2024-01-01 msg="uploading tables"
+level=info ts=2026-09-13T20:31:51.008669043Z caller=table_manager.go:299 index-store=tsdb-2024-01-01 msg="query readiness setup completed" duration=1.624µs distinct_users_len=0 distinct_users=
+level=info ts=2026-09-13T20:31:51.021245789Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:31:51.021295469Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:31:51.021385823Z caller=checkpoint.go:611 msg="starting checkpoint"
+level=info ts=2026-09-13T20:31:51.021650051Z caller=checkpoint.go:336 msg="attempting checkpoint for" dir=/loki/wal/checkpoint.000001
+level=info ts=2026-09-13T20:31:56.331984466Z caller=compactor.go:527 msg="compactor startup delay completed"
+level=info ts=2026-09-13T20:31:56.332343318Z caller=compactor.go:592 msg="compactor started"
+level=info ts=2026-09-13T20:31:56.332369378Z caller=marker.go:177 msg="mark processor started" workers=150 delay=2h0m0s
+level=info ts=2026-09-13T20:31:56.332446454Z caller=expiration.go:78 msg="overall smallest retention period 1788726716.332, default smallest retention period 1788726716.332"
+level=info ts=2026-09-13T20:31:56.332563633Z caller=marker.go:202 msg="no marks file found"
+level=info ts=2026-09-13T20:32:21.021268937Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:32:21.02133902Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:32:51.007817931Z caller=table_manager.go:136 index-store=tsdb-2024-01-01 msg="uploading tables"
+level=info ts=2026-09-13T20:32:51.021483402Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:32:51.021542Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:32:56.332817624Z caller=marker.go:202 msg="no marks file found"
+level=info ts=2026-09-13T20:33:21.021431203Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:33:21.021511026Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:33:51.007786611Z caller=table_manager.go:136 index-store=tsdb-2024-01-01 msg="uploading tables"
+level=info ts=2026-09-13T20:33:51.021270741Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:33:51.021338082Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:33:56.333597692Z caller=marker.go:202 msg="no marks file found"
+level=info ts=2026-09-13T20:34:21.021298072Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:34:21.021392295Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:34:51.007955089Z caller=table_manager.go:136 index-store=tsdb-2024-01-01 msg="uploading tables"
+level=info ts=2026-09-13T20:34:51.021528674Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:34:51.021589774Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:34:56.333223216Z caller=marker.go:202 msg="no marks file found"
+level=info ts=2026-09-13T20:35:21.02125169Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:35:21.021303072Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:35:51.008242485Z caller=table_manager.go:136 index-store=tsdb-2024-01-01 msg="uploading tables"
+level=info ts=2026-09-13T20:35:51.021279223Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:35:51.021365711Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:35:56.333045013Z caller=marker.go:202 msg="no marks file found"
+level=info ts=2026-09-13T20:36:21.021276306Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:36:21.02133589Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:36:21.034724986Z caller=checkpoint.go:498 msg="atomic checkpoint finished" old=/loki/wal/checkpoint.000001.tmp new=/loki/wal/checkpoint.000001
+level=info ts=2026-09-13T20:36:21.035149249Z caller=checkpoint.go:569 msg="checkpoint done" time=4m30.013207295s
+level=info ts=2026-09-13T20:36:51.008005539Z caller=table_manager.go:136 index-store=tsdb-2024-01-01 msg="uploading tables"
+level=info ts=2026-09-13T20:36:51.008085211Z caller=table_manager.go:238 index-store=tsdb-2024-01-01 msg="syncing tables"
+level=info ts=2026-09-13T20:36:51.008538459Z caller=table_manager.go:299 index-store=tsdb-2024-01-01 msg="query readiness setup completed" duration=2.282µs distinct_users_len=0 distinct_users=
+level=info ts=2026-09-13T20:36:51.02135539Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:36:51.021404406Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"
+level=info ts=2026-09-13T20:36:51.02158395Z caller=checkpoint.go:611 msg="starting checkpoint"
+level=info ts=2026-09-13T20:36:51.021866514Z caller=checkpoint.go:336 msg="attempting checkpoint for" dir=/loki/wal/checkpoint.000002
+level=info ts=2026-09-13T20:36:56.332740433Z caller=marker.go:202 msg="no marks file found"
+level=info ts=2026-09-13T20:37:21.021286578Z caller=recalculate_owned_streams.go:49 msg="starting recalculate owned streams job"
+level=info ts=2026-09-13T20:37:21.021325288Z caller=recalculate_owned_streams.go:52 msg="completed recalculate owned streams job"

@@ -1,0 +1,40 @@
+2026-09-13T20:25:06.488938Z 0 [System] [MY-013172] [Server] Received SHUTDOWN from user <via user signal>. Shutting down mysqld (Version: 8.0.46).
+2026-09-13T20:25:08.498435Z 0 [Warning] [MY-010909] [Server] /usr/sbin/mysqld: Forcing close of thread 23  user: 'app'.
+2026-09-13T20:25:10.041063Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.46)  MySQL Community Server - GPL.
+2026-09-13T20:25:10.041063Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.46)  MySQL Community Server - GPL.
+2026-09-13 20:25:16+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.46-1.el9 started.
+2026-09-13 20:25:16+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2026-09-13 20:25:16+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.46-1.el9 started.
+'/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+2026-09-13T20:25:16.769338Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2026-09-13T20:25:16.769373Z 0 [Warning] [MY-011070] [Server] 'binlog_format' is deprecated and will be removed in a future release.
+2026-09-13T20:25:16.771025Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.46) starting as process 1
+2026-09-13T20:25:16.776901Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-09-13T20:25:16.992195Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-09-13T20:25:17.342114Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2026-09-13T20:25:17.342167Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2026-09-13T20:25:17.347933Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2026-09-13T20:25:17.407080Z 5 [Warning] [MY-010897] [Repl] Storing MySQL user name or password information in the connection metadata repository is not secure and is therefore not recommended. Please consider using the USER and PASSWORD connection options for START REPLICA; see the 'START REPLICA Syntax' in the MySQL Manual for more information.
+2026-09-13T20:25:17.409979Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2026-09-13T20:25:17.410078Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.46'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2026-09-13T20:25:17.416657Z 5 [System] [MY-014002] [Repl] Replica receiver thread for channel '': connected to source 'repl@mysql-primary:3306' with server_uuid=394740ea-afb0-11f1-87e7-c634640575a2, server_id=1. Starting GTID-based replication.
+2026-09-13T20:28:47.230357Z 0 [System] [MY-013172] [Server] Received SHUTDOWN from user <via user signal>. Shutting down mysqld (Version: 8.0.46).
+2026-09-13T20:28:49.237365Z 0 [Warning] [MY-010909] [Server] /usr/sbin/mysqld: Forcing close of thread 41  user: 'app'.
+2026-09-13T20:28:50.681380Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.46)  MySQL Community Server - GPL.
+2026-09-13T20:28:50.681380Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.46)  MySQL Community Server - GPL.
+2026-09-13 20:28:56+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.46-1.el9 started.
+2026-09-13 20:28:57+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2026-09-13 20:28:57+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.46-1.el9 started.
+'/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+2026-09-13T20:28:57.439657Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2026-09-13T20:28:57.439690Z 0 [Warning] [MY-011070] [Server] 'binlog_format' is deprecated and will be removed in a future release.
+2026-09-13T20:28:57.441392Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.46) starting as process 1
+2026-09-13T20:28:57.447402Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-09-13T20:28:57.680483Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-09-13T20:28:58.010710Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2026-09-13T20:28:58.010749Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2026-09-13T20:28:58.016237Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2026-09-13T20:28:58.079354Z 5 [Warning] [MY-010897] [Repl] Storing MySQL user name or password information in the connection metadata repository is not secure and is therefore not recommended. Please consider using the USER and PASSWORD connection options for START REPLICA; see the 'START REPLICA Syntax' in the MySQL Manual for more information.
+2026-09-13T20:28:58.086127Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2026-09-13T20:28:58.086204Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.46'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2026-09-13T20:28:58.088203Z 5 [System] [MY-014002] [Repl] Replica receiver thread for channel '': connected to source 'repl@mysql-primary:3306' with server_uuid=394740ea-afb0-11f1-87e7-c634640575a2, server_id=1. Starting GTID-based replication.

@@ -1,0 +1,30 @@
+data_dir = "/var/lib/vector"
+
+[sources.contenedores]
+type = "docker_logs"
+docker_host = "unix:///var/run/docker.sock"
+
+[transforms.solo_proyecto]
+type = "filter"
+inputs = ["contenedores"]
+condition = '.label."com.docker.compose.project" == "docker"'
+
+[transforms.nombres_espanol]
+type = "remap"
+inputs = ["solo_proyecto"]
+source = '''
+.servicio = .label."com.docker.compose.service"
+.nombre = if .servicio == "mysql-primary" { "mysql-principal" } else if .servicio == "mysql-replica" { "mysql-replica" } else if .servicio == "mysql-failover" { "mysql-respaldo" } else if .servicio == "apache-php" { "apache-php" } else if .servicio == "proxysql" { "proxy-sql" } else if .servicio == "grafana" { "grafana" } else if .servicio == "loki" { "loki" } else if .servicio == "promtail" { "recolector-promtail" } else { replace!(.container_name, r'^[^a-zA-Z0-9]+', "") }
+.proyecto = .label."com.docker.compose.project"
+''' 
+
+[sinks.archivos_legibles]
+type = "file"
+inputs = ["nombres_espanol"]
+path = "/registros/{{ nombre }}/%Y-%m-%d.log"
+encoding.codec = "text"
+
+[sinks.archivos_legibles.buffer]
+type = "disk"
+max_size = 268435488
+when_full = "block"

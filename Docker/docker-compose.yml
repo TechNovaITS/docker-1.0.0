@@ -1,0 +1,180 @@
+services:
+  mysql-primary:
+    image: mysql:8.0
+    command:
+      - --server-id=1
+      - --log-bin=mysql-bin
+      - --binlog-format=ROW
+      - --gtid-mode=ON
+      - --enforce-gtid-consistency=ON
+      - --log-replica-updates=ON
+      - --binlog-expire-logs-seconds=604800
+      - --slow-query-log=ON
+      - --slow-query-log-file=/var/log/mysql/consultas-lentas.log
+      - --long-query-time=1
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    volumes:
+      - mysql-primary-data:/var/lib/mysql
+      - ./texto/mysql-principal:/var/log/mysql
+      - ./mysql/primary/init:/docker-entrypoint-initdb.d:ro
+    networks: [backend]
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+
+  mysql-replica:
+    image: mysql:8.0
+    command:
+      - --server-id=2
+      - --log-bin=mysql-bin
+      - --relay-log=relay-bin
+      - --binlog-format=ROW
+      - --gtid-mode=ON
+      - --enforce-gtid-consistency=ON
+      - --log-replica-updates=ON
+      - --read-only=ON
+      - --slow-query-log=ON
+      - --slow-query-log-file=/var/log/mysql/consultas-lentas.log
+      - --long-query-time=1
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    depends_on:
+      mysql-primary:
+        condition: service_healthy
+    volumes:
+      - mysql-replica-data:/var/lib/mysql
+      - ./texto/mysql-replica:/var/log/mysql
+      - ./mysql/replica/init:/docker-entrypoint-initdb.d:ro
+    networks: [backend]
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+
+  mysql-failover:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    depends_on:
+      mysql-primary:
+        condition: service_healthy
+      mysql-replica:
+        condition: service_healthy
+    command: ["sh", "/failover.sh"]
+    volumes:
+      - ./mysql/failover/failover.sh:/failover.sh:ro
+    networks: [backend]
+    restart: unless-stopped
+
+  proxysql:
+    image: proxysql/proxysql:2.7.3
+    ports:
+      - "6033:6033"
+      - "6032:6032"
+    volumes:
+      - proxysql-data:/var/lib/proxysql
+      - ./proxysql/proxysql.cnf:/etc/proxysql.cnf:ro
+    command: ["proxysql", "--config-file=/etc/proxysql.cnf", "--foreground"]
+    depends_on:
+      mysql-primary:
+        condition: service_healthy
+      mysql-replica:
+        condition: service_healthy
+    networks: [backend]
+    healthcheck:
+      test: ["CMD-SHELL", "mysql -h 127.0.0.1 -P6033 -uapp -papp_change_me -e 'SELECT 1' >/dev/null 2>&1"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+
+  apache-php:
+    build: ./apache-php
+    environment:
+      DB_HOST: proxysql
+      DB_PORT: 6033
+      DB_NAME: ${MYSQL_DATABASE}
+      DB_USER: ${MYSQL_APP_USER}
+      DB_PASSWORD: ${MYSQL_APP_PASSWORD}
+    depends_on:
+      proxysql:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    networks: [backend]
+
+  grafana:
+    image: grafana/grafana:11.2.0
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    depends_on:
+      proxysql:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+    networks: [backend]
+
+  loki:
+    image: grafana/loki:3.3.2
+    command: ["-config.file=/etc/loki/config.yml"]
+    volumes:
+      - ./Registros/loki:/loki
+      - ./loki/config.yml:/etc/loki/config.yml:ro
+    networks: [backend]
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3100/ready | grep -q ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+
+  promtail:
+    image: grafana/promtail:3.3.2
+    command: ["-config.file=/etc/promtail/config.yml"]
+    user: root
+    depends_on:
+      loki:
+        condition: service_healthy
+    volumes:
+      - ./promtail/config.yml:/etc/promtail/config.yml:ro
+      - promtail-positions:/tmp
+      - ./texto:/var/log/mysql:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks: [backend]
+    restart: unless-stopped
+
+  vector:
+    image: timberio/vector:0.41.1-alpine
+    command: ["--config", "/etc/vector/config.toml"]
+    user: root
+    volumes:
+      - ./vector/config.toml:/etc/vector/config.toml:ro
+      - ./texto:/registros
+      - vector-data:/var/lib/vector
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks: [backend]
+    restart: unless-stopped
+
+volumes:
+  mysql-primary-data:
+  mysql-replica-data:
+  proxysql-data:
+  grafana-data:
+  promtail-positions:
+  vector-data:
+
+networks:
+  backend:
+    name: docker_backend
+    driver: bridge

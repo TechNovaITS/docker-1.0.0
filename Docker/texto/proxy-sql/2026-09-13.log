@@ -1,0 +1,176 @@
+2026-09-13 20:24:57 MySQL_Monitor.cpp:7410:monitor_read_only_process_ready_tasks(): [ERROR] Got error: mmsd 0x7fd11060d000 , MYSQL 0x7fd10fc00000 , FD 31 : Server shutdown in progress
+2026-09-13 20:24:57 [INFO] Server 'mysql-replica:3306' found with 'read_only=0', but not found as writer
+2026-09-13 20:24:57 [INFO] Creating new server in HG 10 : mysql-replica:3306 , gtid_port=0, weight=1, status=0
+2026-09-13 20:24:57 [INFO] Regenerating table 'mysql_servers' due to actions on server 'mysql-replica:3306'
+2026-09-13 20:24:57 [INFO] Dumping current MySQL Servers structures for hostgroup ALL
+HID: 10 , address: mysql-primary , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: primary
+HID: 10 , address: mysql-replica , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: replica
+HID: 20 , address: mysql-replica , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: replica
+2026-09-13 20:24:57 [INFO] Dumping mysql_servers: ALL
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+| hid | hostname      | port | gtid | weight | status | cmp | max_conns | max_lag | ssl | max_lat | comment | mem_pointer     |
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+| 10  | mysql-primary | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | primary | 140536095474880 |
+| 20  | mysql-replica | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | replica | 140536095475072 |
+| 10  | mysql-replica | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | replica | 140535899676672 |
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+2026-09-13 20:24:57 [INFO] Checksum for table mysql_servers is 0x6439383C3F242EA4
+2026-09-13 20:24:58 MySQL_Monitor.cpp:7410:monitor_read_only_process_ready_tasks(): [ERROR] Got error: mmsd 0x7fd11060d100 , MYSQL 0x7fd110400500 , FD 33 : Lost connection to server during query
+2026-09-13 20:24:58 [INFO] read_only_action_v2() detected RO=0 on server mysql-replica:3306 for the first time after commit(), but no need to reconfigure
+2026-09-13 20:25:00 MySQL_Monitor.cpp:1638:monitor_read_only_thread(): [ERROR] Timeout on read_only check for mysql-primary:3306 after 0ms. Unable to create a connection. If the server is overload, increase mysql-monitor_connect_timeout. Error: timeout on creating new connection: Can't connect to server on 'mysql-primary' (115).
+2026-09-13 20:25:01 MySQL_Monitor.cpp:1638:monitor_read_only_thread(): [ERROR] Timeout on read_only check for mysql-primary:3306 after 0ms. Unable to create a connection. If the server is overload, increase mysql-monitor_connect_timeout. Error: timeout on creating new connection: Can't connect to server on 'mysql-primary' (115).
+2026-09-13 20:25:03 MySQL_Monitor.cpp:1638:monitor_read_only_thread(): [ERROR] Timeout on read_only check for mysql-primary:3306 after 0ms. Unable to create a connection. If the server is overload, increase mysql-monitor_connect_timeout. Error: timeout on creating new connection: Can't connect to server on 'mysql-primary' (115).
+2026-09-13 20:25:03 MySQL_Monitor.cpp:1820:monitor_read_only_thread(): [ERROR] Server mysql-primary:3306 missed 3 read_only checks. Assuming read_only=1
+2026-09-13 20:25:03 [INFO] Server 'mysql-primary:3306' found with 'read_only=1', but not found as reader
+2026-09-13 20:25:03 [INFO] Creating new server in HG 20 : mysql-primary:3306 , gtid_port=0, weight=1, status=0
+2026-09-13 20:25:03 MySQL_HostGroups_Manager.cpp:7473:remove_HGM(): [WARNING] Removed server at address 0x7fd11c0c84c0, hostgroup 10, address mysql-primary port 3306. Setting status OFFLINE HARD and immediately dropping all free connections. Used connections will be dropped when trying to use them
+2026-09-13 20:25:03 [INFO] Regenerating table 'mysql_servers' due to actions on server 'mysql-primary:3306'
+2026-09-13 20:25:03 [INFO] Dumping current MySQL Servers structures for hostgroup ALL
+HID: 10 , address: mysql-replica , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: replica
+HID: 20 , address: mysql-replica , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: replica
+HID: 20 , address: mysql-primary , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: primary
+2026-09-13 20:25:03 [INFO] Dumping mysql_servers: ALL
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+| hid | hostname      | port | gtid | weight | status | cmp | max_conns | max_lag | ssl | max_lat | comment | mem_pointer     |
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+| 10  | mysql-replica | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | replica | 140535899676672 |
+| 20  | mysql-primary | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | primary | 140535889539264 |
+| 20  | mysql-replica | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | replica | 140536095475072 |
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+2026-09-13 20:25:03 [INFO] Checksum for table mysql_servers is 0x3A92F9224AAEBFE5
+2026-09-13 20:25:03 MySQL_Monitor.cpp:3183:monitor_ping(): [ERROR] Server mysql-primary:3306 missed 3 heartbeats, shunning it and killing all the connections. Disabling other checks until the node comes back online.
+2026-09-13 20:25:07 MySQL_Monitor.cpp:7410:monitor_read_only_process_ready_tasks(): [ERROR] Got error: mmsd 0x7fd110609300 , MYSQL 0x7fd110400000 , FD 32 : Lost connection to server during query
+2026-09-13 20:25:09 MySQL_Session.cpp:1984:handler_again___status_PINGING_SERVER(): [ERROR] Detected a broken connection while during ping on (20,mysql-replica,3306,23) , FD (Conn:27 , MyDS:27) , user app , last_used 0ms ago : 2013, Lost connection to server during query
+2026-09-13 20:25:09 mysql_connection.cpp:1218:handler(): [ERROR] Failed to mysql_real_connect() on 20:mysql-replica:3306 , FD (Conn:0 , MyDS:27) , 2002: Can't connect to server on 'mysql-replica' (111).
+2026-09-13 20:25:09 mysql_connection.cpp:1218:handler(): [ERROR] Failed to mysql_real_connect() on 20:mysql-replica:3306 , FD (Conn:0 , MyDS:27) , 2002: Can't connect to server on 'mysql-replica' (111).
+2026-09-13 20:25:09 mysql_connection.cpp:1218:handler(): [ERROR] Failed to mysql_real_connect() on 20:mysql-replica:3306 , FD (Conn:0 , MyDS:27) , 2002: Can't connect to server on 'mysql-replica' (111).
+2026-09-13 20:25:09 mysql_connection.cpp:1218:handler(): [ERROR] Failed to mysql_real_connect() on 20:mysql-replica:3306 , FD (Conn:0 , MyDS:27) , 2002: Can't connect to server on 'mysql-replica' (111).
+2026-09-13 20:25:09 MySrvC.cpp:127:connect_error(): [ERROR] Shunning server mysql-replica:3306 with 5 errors/sec. Shunning for 10 seconds
+2026-09-13 20:25:09 MyHGC.cpp:227:get_random_MySrvC(): [ERROR] Hostgroup 20 has no servers available! Checking servers shunned for more than 1 second
+2026-09-13 20:25:09 MySQL_Monitor.cpp:1638:monitor_read_only_thread(): [ERROR] Timeout on read_only check for mysql-replica:3306 after 0ms. Unable to create a connection. If the server is overload, increase mysql-monitor_connect_timeout. Error: timeout on creating new connection: Can't connect to server on 'mysql-replica' (115).
+2026-09-13 20:25:09 MySQL_Monitor.cpp:3183:monitor_ping(): [ERROR] Server mysql-primary:3306 missed 3 heartbeats, shunning it and killing all the connections. Disabling other checks until the node comes back online.
+2026-09-13 20:25:09 mysql_connection.cpp:1218:handler(): [ERROR] Failed to mysql_real_connect() on 20:mysql-primary:3306 , FD (Conn:0 , MyDS:0) , 2005: Unknown server host 'mysql-primary' (-2).
+2026-09-13 20:25:11 MyHGC.cpp:227:get_random_MySrvC(): [ERROR] Hostgroup 20 has no servers available! Checking servers shunned for more than 1 second
+2026-09-13 20:25:11 mysql_connection.cpp:1218:handler(): [ERROR] Failed to mysql_real_connect() on 20:mysql-primary:3306 , FD (Conn:0 , MyDS:28) , 2002: Can't connect to server on 'mysql-primary' (111).
+2026-09-13 20:25:11 MySQL_Monitor.cpp:1638:monitor_read_only_thread(): [ERROR] Timeout on read_only check for mysql-replica:3306 after 424ms. Unable to create a connection. If the server is overload, increase mysql-monitor_connect_timeout. Error: timeout on creating new connection: Unknown server host 'mysql-replica' (-2).
+2026-09-13 20:25:11 mysql_connection.cpp:1218:handler(): [ERROR] Failed to mysql_real_connect() on 20:mysql-replica:3306 , FD (Conn:0 , MyDS:0) , 2005: Unknown server host 'mysql-replica' (-2).
+2026-09-13 20:25:11 mysql_connection.cpp:1218:handler(): [ERROR] Failed to mysql_real_connect() on 20:mysql-primary:3306 , FD (Conn:0 , MyDS:27) , 2002: Can't connect to server on 'mysql-primary' (111).
+2026-09-13 20:25:11 MySQL_Monitor.cpp:3183:monitor_ping(): [ERROR] Server mysql-primary:3306 missed 3 heartbeats, shunning it and killing all the connections. Disabling other checks until the node comes back online.
+2026-09-13 20:25:11 mysql_connection.cpp:1218:handler(): [ERROR] Failed to mysql_real_connect() on 20:mysql-replica:3306 , FD (Conn:0 , MyDS:0) , 2005: Unknown server host 'mysql-replica' (-2).
+2026-09-13 20:25:12 [INFO] Server 'mysql-primary:3306' found with 'read_only=0', but not found as writer
+2026-09-13 20:25:12 [INFO] Creating new server in HG 10 : mysql-primary:3306 , gtid_port=0, weight=1, status=0
+2026-09-13 20:25:12 [INFO] Regenerating table 'mysql_servers' due to actions on server 'mysql-primary:3306'
+2026-09-13 20:25:12 [INFO] Dumping current MySQL Servers structures for hostgroup ALL
+HID: 10 , address: mysql-replica , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: replica
+HID: 10 , address: mysql-primary , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: primary
+HID: 20 , address: mysql-replica , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: replica
+HID: 20 , address: mysql-primary , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: primary
+2026-09-13 20:25:12 [INFO] Dumping mysql_servers: ALL
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+| hid | hostname      | port | gtid | weight | status | cmp | max_conns | max_lag | ssl | max_lat | comment | mem_pointer     |
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+| 10  | mysql-replica | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | replica | 140535899676672 |
+| 20  | mysql-primary | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | primary | 140535889539264 |
+| 20  | mysql-replica | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | replica | 140536095475072 |
+| 10  | mysql-primary | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | primary | 140535899676864 |
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+2026-09-13 20:25:12 [INFO] Checksum for table mysql_servers is 0xD75A8BCB7E482F0C
+2026-09-13 20:25:12 mysql_connection.cpp:1218:handler(): [ERROR] Failed to mysql_real_connect() on 20:mysql-replica:3306 , FD (Conn:0 , MyDS:0) , 2005: Unknown server host 'mysql-replica' (-2).
+2026-09-13 20:25:12 MySQL_Monitor.cpp:1638:monitor_read_only_thread(): [ERROR] Timeout on read_only check for mysql-replica:3306 after 427ms. Unable to create a connection. If the server is overload, increase mysql-monitor_connect_timeout. Error: timeout on creating new connection: Unknown server host 'mysql-replica' (-2).
+2026-09-13 20:25:12 MySQL_Monitor.cpp:1820:monitor_read_only_thread(): [ERROR] Server mysql-replica:3306 missed 3 read_only checks. Assuming read_only=1
+2026-09-13 20:25:12 [INFO] Server 'mysql-replica:3306' found with 'read_only=1', but not found as reader
+2026-09-13 20:25:12 MySQL_HostGroups_Manager.cpp:7473:remove_HGM(): [WARNING] Removed server at address 0x7fd11060e000, hostgroup 10, address mysql-replica port 3306. Setting status OFFLINE HARD and immediately dropping all free connections. Used connections will be dropped when trying to use them
+2026-09-13 20:25:12 [INFO] Regenerating table 'mysql_servers' due to actions on server 'mysql-replica:3306'
+2026-09-13 20:25:12 [INFO] Dumping current MySQL Servers structures for hostgroup ALL
+HID: 10 , address: mysql-primary , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: primary
+HID: 20 , address: mysql-replica , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: replica
+HID: 20 , address: mysql-primary , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: primary
+2026-09-13 20:25:12 [INFO] Dumping mysql_servers: ALL
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+| hid | hostname      | port | gtid | weight | status | cmp | max_conns | max_lag | ssl | max_lat | comment | mem_pointer     |
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+| 10  | mysql-primary | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | primary | 140535899676864 |
+| 20  | mysql-primary | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | primary | 140535889539264 |
+| 20  | mysql-replica | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | replica | 140536095475072 |
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+2026-09-13 20:25:12 [INFO] Checksum for table mysql_servers is 0x7E3614FBA5684782
+2026-09-13 20:25:13 mysql_connection.cpp:1218:handler(): [ERROR] Failed to mysql_real_connect() on 20:mysql-replica:3306 , FD (Conn:0 , MyDS:0) , 2005: Unknown server host 'mysql-replica' (-2).
+2026-09-13 20:25:14 MySQL_Monitor.cpp:1638:monitor_read_only_thread(): [ERROR] Timeout on read_only check for mysql-replica:3306 after 497ms. Unable to create a connection. If the server is overload, increase mysql-monitor_connect_timeout. Error: timeout on creating new connection: Unknown server host 'mysql-replica' (-2).
+2026-09-13 20:25:14 MySQL_Monitor.cpp:1820:monitor_read_only_thread(): [ERROR] Server mysql-replica:3306 missed 3 read_only checks. Assuming read_only=1
+2026-09-13 20:25:15 MySQL_Monitor.cpp:3183:monitor_ping(): [ERROR] Server mysql-replica:3306 missed 3 heartbeats, shunning it and killing all the connections. Disabling other checks until the node comes back online.
+2026-09-13 20:28:37 MySQL_Monitor.cpp:7410:monitor_read_only_process_ready_tasks(): [ERROR] Got error: mmsd 0x7fd110631100 , MYSQL 0x7fd10fc00000 , FD 28 : Lost connection to server during query
+2026-09-13 20:28:39 MySQL_Monitor.cpp:1638:monitor_read_only_thread(): [ERROR] Timeout on read_only check for mysql-primary:3306 after 0ms. Unable to create a connection. If the server is overload, increase mysql-monitor_connect_timeout. Error: timeout on creating new connection: Can't connect to server on 'mysql-primary' (115).
+2026-09-13 20:28:40 MySQL_Monitor.cpp:1638:monitor_read_only_thread(): [ERROR] Timeout on read_only check for mysql-primary:3306 after 0ms. Unable to create a connection. If the server is overload, increase mysql-monitor_connect_timeout. Error: timeout on creating new connection: Can't connect to server on 'mysql-primary' (115).
+2026-09-13 20:28:42 [INFO] Server 'mysql-replica:3306' found with 'read_only=0', but not found as writer
+2026-09-13 20:28:42 [INFO] Creating new server in HG 10 : mysql-replica:3306 , gtid_port=0, weight=1, status=0
+2026-09-13 20:28:42 [INFO] Regenerating table 'mysql_servers' due to actions on server 'mysql-replica:3306'
+2026-09-13 20:28:42 MySQL_Monitor.cpp:1638:monitor_read_only_thread(): [ERROR] Timeout on read_only check for mysql-primary:3306 after 0ms. Unable to create a connection. If the server is overload, increase mysql-monitor_connect_timeout. Error: timeout on creating new connection: Can't connect to server on 'mysql-primary' (115).
+2026-09-13 20:28:42 MySQL_Monitor.cpp:1820:monitor_read_only_thread(): [ERROR] Server mysql-primary:3306 missed 3 read_only checks. Assuming read_only=1
+2026-09-13 20:28:42 [INFO] Dumping current MySQL Servers structures for hostgroup ALL
+HID: 10 , address: mysql-primary , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: primary
+HID: 10 , address: mysql-replica , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: replica
+HID: 20 , address: mysql-replica , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: replica
+HID: 20 , address: mysql-primary , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: primary
+2026-09-13 20:28:42 [INFO] Dumping mysql_servers: ALL
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+| hid | hostname      | port | gtid | weight | status | cmp | max_conns | max_lag | ssl | max_lat | comment | mem_pointer     |
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+| 10  | mysql-primary | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | primary | 140535899676864 |
+| 20  | mysql-primary | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | primary | 140535889539264 |
+| 20  | mysql-replica | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | replica | 140536095475072 |
+| 10  | mysql-replica | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | replica | 140535899676672 |
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+2026-09-13 20:28:42 [INFO] Checksum for table mysql_servers is 0xD75A8BCB7E482F0C
+2026-09-13 20:28:42 [INFO] Server 'mysql-primary:3306' found with 'read_only=1', but not found as reader
+2026-09-13 20:28:42 MySQL_HostGroups_Manager.cpp:7473:remove_HGM(): [WARNING] Removed server at address 0x7fd11060e0c0, hostgroup 10, address mysql-primary port 3306. Setting status OFFLINE HARD and immediately dropping all free connections. Used connections will be dropped when trying to use them
+2026-09-13 20:28:42 [INFO] Regenerating table 'mysql_servers' due to actions on server 'mysql-primary:3306'
+2026-09-13 20:28:42 [INFO] Dumping current MySQL Servers structures for hostgroup ALL
+HID: 10 , address: mysql-replica , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: replica
+HID: 20 , address: mysql-replica , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: replica
+HID: 20 , address: mysql-primary , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: primary
+2026-09-13 20:28:42 [INFO] Dumping mysql_servers: ALL
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+| hid | hostname      | port | gtid | weight | status | cmp | max_conns | max_lag | ssl | max_lat | comment | mem_pointer     |
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+| 10  | mysql-replica | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | replica | 140535899676672 |
+| 20  | mysql-primary | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | primary | 140535889539264 |
+| 20  | mysql-replica | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | replica | 140536095475072 |
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+2026-09-13 20:28:42 [INFO] Checksum for table mysql_servers is 0x3A92F9224AAEBFE5
+2026-09-13 20:28:43 MySQL_Monitor.cpp:3183:monitor_ping(): [ERROR] Server mysql-primary:3306 missed 3 heartbeats, shunning it and killing all the connections. Disabling other checks until the node comes back online.
+2026-09-13 20:28:48 MySQL_Monitor.cpp:7410:monitor_read_only_process_ready_tasks(): [ERROR] Got error: mmsd 0x7fd110631000 , MYSQL 0x7fd1104db800 , FD 26 : Lost connection to server during query
+2026-09-13 20:28:49 MySQL_Monitor.cpp:1638:monitor_read_only_thread(): [ERROR] Timeout on read_only check for mysql-replica:3306 after 0ms. Unable to create a connection. If the server is overload, increase mysql-monitor_connect_timeout. Error: timeout on creating new connection: Can't connect to server on 'mysql-replica' (115).
+2026-09-13 20:28:51 MySQL_Monitor.cpp:1638:monitor_read_only_thread(): [ERROR] Timeout on read_only check for mysql-replica:3306 after 416ms. Unable to create a connection. If the server is overload, increase mysql-monitor_connect_timeout. Error: timeout on creating new connection: Unknown server host 'mysql-replica' (-2).
+2026-09-13 20:28:53 MySQL_Monitor.cpp:1638:monitor_read_only_thread(): [ERROR] Timeout on read_only check for mysql-replica:3306 after 417ms. Unable to create a connection. If the server is overload, increase mysql-monitor_connect_timeout. Error: timeout on creating new connection: Unknown server host 'mysql-replica' (-2).
+2026-09-13 20:28:53 MySQL_Monitor.cpp:1820:monitor_read_only_thread(): [ERROR] Server mysql-replica:3306 missed 3 read_only checks. Assuming read_only=1
+2026-09-13 20:28:53 [INFO] Server 'mysql-replica:3306' found with 'read_only=1', but not found as reader
+2026-09-13 20:28:53 MySQL_HostGroups_Manager.cpp:7473:remove_HGM(): [WARNING] Removed server at address 0x7fd11060e000, hostgroup 10, address mysql-replica port 3306. Setting status OFFLINE HARD and immediately dropping all free connections. Used connections will be dropped when trying to use them
+2026-09-13 20:28:53 [INFO] Regenerating table 'mysql_servers' due to actions on server 'mysql-replica:3306'
+2026-09-13 20:28:53 [INFO] Dumping current MySQL Servers structures for hostgroup ALL
+HID: 20 , address: mysql-replica , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: replica
+HID: 20 , address: mysql-primary , port: 3306 , gtid_port: 0 , weight: 1 , status: SHUNNED , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: primary
+2026-09-13 20:28:53 [INFO] Dumping mysql_servers: ALL
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+| hid | hostname      | port | gtid | weight | status | cmp | max_conns | max_lag | ssl | max_lat | comment | mem_pointer     |
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+| 20  | mysql-replica | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | replica | 140536095475072 |
+| 20  | mysql-primary | 3306 | 0    | 1      | 1      | 0   | 200       | 0       | 0   | 0       | primary | 140535889539264 |
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+2026-09-13 20:28:53 [INFO] Checksum for table mysql_servers is 0x2B1BECCC31C2D1B0
+2026-09-13 20:28:54 [INFO] Server 'mysql-primary:3306' found with 'read_only=0', but not found as writer
+2026-09-13 20:28:54 [INFO] Creating new server in HG 10 : mysql-primary:3306 , gtid_port=0, weight=1, status=0
+2026-09-13 20:28:54 [INFO] Regenerating table 'mysql_servers' due to actions on server 'mysql-primary:3306'
+2026-09-13 20:28:54 [INFO] Dumping current MySQL Servers structures for hostgroup ALL
+HID: 10 , address: mysql-primary , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: primary
+HID: 20 , address: mysql-replica , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: replica
+HID: 20 , address: mysql-primary , port: 3306 , gtid_port: 0 , weight: 1 , status: ONLINE , max_connections: 200 , max_replication_lag: 0 , use_ssl: 0 , max_latency_ms: 0 , comment: primary
+2026-09-13 20:28:54 [INFO] Dumping mysql_servers: ALL
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+| hid | hostname      | port | gtid | weight | status | cmp | max_conns | max_lag | ssl | max_lat | comment | mem_pointer     |
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+| 10  | mysql-primary | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | primary | 140535899677056 |
+| 20  | mysql-primary | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | primary | 140535889539264 |
+| 20  | mysql-replica | 3306 | 0    | 1      | 0      | 0   | 200       | 0       | 0   | 0       | replica | 140536095475072 |
++-----+---------------+------+------+--------+--------+-----+-----------+---------+-----+---------+---------+-----------------+
+2026-09-13 20:28:54 [INFO] Checksum for table mysql_servers is 0x7E3614FBA5684782
+2026-09-13 20:28:55 MySQL_Monitor.cpp:3183:monitor_ping(): [ERROR] Server mysql-replica:3306 missed 3 heartbeats, shunning it and killing all the connections. Disabling other checks until the node comes back online.

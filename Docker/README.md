@@ -1,4 +1,4 @@
-# MySQL HA local con ProxySQL, Apache PHP y Grafana
+# MySQL Alta Dispo local con ProxySQL, Apache PHP y Grafana
 
 ## Requisitos
 

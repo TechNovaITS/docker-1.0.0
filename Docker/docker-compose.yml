@@ -97,7 +97,7 @@ services:
         condition: service_healthy
     networks: [backend]
     healthcheck:
-      test: ["CMD-SHELL", "mysql -h 127.0.0.1 -P6033 -uapp -papp_change_me -e 'SELECT 1' >/dev/null 2>&1"]
+      test: ["CMD-SHELL", "mysql -h 127.0.0.1 -P6033 -u$$MYSQL_APP_USER -p$$MYSQL_APP_PASSWORD -e 'SELECT 1' >/dev/null 2>&1"]
       interval: 10s
       timeout: 5s
       retries: 20

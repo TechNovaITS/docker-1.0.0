@@ -2,7 +2,7 @@ datadir="/var/lib/proxysql"
 
 admin_variables=
 {
-  admin_credentials="admin:admin_change_me"
+  admin_credentials="admin:$PROXYSQL_ADMIN_PASSWORD"
   mysql_ifaces="0.0.0.0:6032"
 }
 
@@ -16,7 +16,7 @@ mysql_variables=
   poll_timeout=2000
   interfaces="0.0.0.0:6033"
   monitor_username="proxysql_monitor"
-  monitor_password="monitor_change_me"
+  monitor_password="$PROXYSQL_MONITOR_PASSWORD"
   monitor_connect_interval=2000
   monitor_ping_interval=2000
   monitor_read_only_interval=1500
@@ -37,8 +37,8 @@ mysql_replication_hostgroups =
 
 mysql_users =
 (
-  { username="app", password="app_change_me", default_hostgroup=10, transaction_persistent=true, active=true },
-  { username="grafana", password="grafana_change_me", default_hostgroup=20, active=true }
+  { username="$MYSQL_APP_USER", password="$MYSQL_APP_PASSWORD", default_hostgroup=10, transaction_persistent=true, active=true },
+  { username="$GRAFANA_DB_USER", password="$GRAFANA_DB_PASSWORD", default_hostgroup=20, active=true }
 )
 
 mysql_query_rules =

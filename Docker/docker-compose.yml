@@ -73,7 +73,7 @@ services:
     networks: [backend]
     restart: unless-stopped
 
-    proxysql:
+  proxysql:
     image: proxysql/proxysql:2.7.3
     ports:
       - "6033:6033"

@@ -80,7 +80,7 @@ services:
       - "6032:6032"
     volumes:
       - proxysql-data:/var/lib/proxysql
-      - ./proxysql/proxysql.cnf:/etc/proxysql.cnf:ro
+      - ./proxysql/proxysql.cnf:/etc/proxysql.cnf.template:ro
     command: ["proxysql", "--config-file=/etc/proxysql.cnf", "--foreground"]
     depends_on:
       mysql-primary:

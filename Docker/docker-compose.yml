@@ -73,15 +73,23 @@ services:
     networks: [backend]
     restart: unless-stopped
 
-  proxysql:
+    proxysql:
     image: proxysql/proxysql:2.7.3
     ports:
       - "6033:6033"
       - "6032:6032"
+    environment:
+      PROXYSQL_ADMIN_PASSWORD: ${PROXYSQL_ADMIN_PASSWORD}
+      PROXYSQL_MONITOR_PASSWORD: ${PROXYSQL_MONITOR_PASSWORD}
+      MYSQL_APP_USER: ${MYSQL_APP_USER}
+      MYSQL_APP_PASSWORD: ${MYSQL_APP_PASSWORD}
+      GRAFANA_DB_USER: ${GRAFANA_DB_USER}
+      GRAFANA_DB_PASSWORD: ${GRAFANA_DB_PASSWORD}
     volumes:
       - proxysql-data:/var/lib/proxysql
-      - ./proxysql/proxysql.cnf:/etc/proxysql.cnf:ro
-    command: ["proxysql", "--config-file=/etc/proxysql.cnf", "--foreground"]
+      - ./proxysql/proxysql.cnf.template:/proxysql.cnf.template:ro
+      - ./proxysql/entrypoint.sh:/entrypoint.sh:ro
+    entrypoint: ["sh", "/entrypoint.sh"]
     depends_on:
       mysql-primary:
         condition: service_healthy
